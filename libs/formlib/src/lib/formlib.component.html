@@ -1,0 +1,15 @@
+<p>formlib works!</p>
+<div [formGroup]="form">
+  <input type="text" formControlName="name" />
+  <ul formArrayName="titles">
+    <li *ngFor="let t of titles.controls;let i=index">
+      <input type="text" [formControlName]="i" />
+    </li>
+    <button (click)="addArrayItem()">Add</button>
+  </ul>
+</div>
+<div>{{{
+  dirty: form.dirty,
+  invalid: form.invalid,
+  value:form.value
+  } | json}}</div>
