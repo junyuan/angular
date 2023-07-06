@@ -3,13 +3,26 @@
   <input type="text" formControlName="name" />
   <ul formArrayName="titles">
     <li *ngFor="let t of titles.controls;let i=index">
-      <input type="text" [formControlName]="i" />
+      <div [formGroupName]="i">
+        <input type="text" formControlName="country" />
+        <input type="text" formControlName="city" />
+      </div>
     </li>
     <button (click)="addArrayItem()">Add</button>
   </ul>
+  <div formGroupName="address">
+    <div>
+      <label>Address1</label>
+      <input type="text" formControlName="address1" />
+    </div>
+    <div>
+      <label>Address2</label>
+      <input type="text" formControlName="address2" />
+    </div>
+  </div>
 </div>
-<div>{{{
+<pre>{{{
   dirty: form.dirty,
   invalid: form.invalid,
   value:form.value
-  } | json}}</div>
+  } | json}}</pre>

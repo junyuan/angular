@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@yuan/formlib": ["libs/formlib/src/index.ts"]
+      "@yuan/formlib": ["libs/formlib/src/index.ts"],
+      "@yuan/formly-demo": ["libs/formly-demo/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
