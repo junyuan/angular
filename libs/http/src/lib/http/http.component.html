@@ -1,0 +1,7 @@
+<div class="flex flex-col">
+  <p-button label="Request Data" (onClick)="requestData()"></p-button>
+  <div class="text-5xl" *ngIf="response && response.htmlCode.length>0" [innerHTML]="response.htmlCode[0]"></div>
+  <div>
+    <pre>{{response | json}}</pre>
+  </div>
+</div>

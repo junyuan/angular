@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'angular-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular';
+  items: MenuItem[] = [
+    { label: 'Form', routerLink: '/form' },
+    { label: 'Formly', routerLink: '/formly' },
+    { label: 'Http', routerLink: '/http' },
+  ];
 }

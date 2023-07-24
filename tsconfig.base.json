@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@yuan/http": ["libs/http/src/index.ts"],
       "@yuan/formlib": ["libs/formlib/src/index.ts"],
       "@yuan/formly-demo": ["libs/formly-demo/src/index.ts"]
     }
