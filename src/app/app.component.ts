@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingService } from '@yuan/http';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -13,4 +14,9 @@ export class AppComponent {
     { label: 'Formly', routerLink: '/formly' },
     { label: 'Http', routerLink: '/http' },
   ];
+  isLoading$ = this.loadingService.loading$;
+
+  constructor(private loadingService: LoadingService) {
+
+  }
 }

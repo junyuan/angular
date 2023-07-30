@@ -1,2 +1,5 @@
 <p-menubar [model]="items"></p-menubar>
 <router-outlet></router-outlet>
+<p-blockUI [blocked]="(isLoading$ | async) || false">
+  <i class="fa-3x fa-solid fa-spinner fa-spin-pulse"></i>
+</p-blockUI>

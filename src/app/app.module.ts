@@ -8,8 +8,9 @@ import { appRoutes } from './app.routes';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { FormlibModule } from '@yuan/formlib';
 import { FormlyDemoModule } from '@yuan/formly-demo';
-import { HttpModule } from '@yuan/http';
+import { AuthModule, HttpModule, LoadingModule } from '@yuan/http';
 import { MenubarModule } from 'primeng/menubar';
+import { BlockUIModule } from 'primeng/blockui';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -21,7 +22,12 @@ import { MenubarModule } from 'primeng/menubar';
     MenubarModule,
     FormlibModule,
     FormlyDemoModule,
-    HttpModule
+    HttpModule,
+    BlockUIModule,
+
+    AuthModule,
+    LoadingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
