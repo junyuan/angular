@@ -1,3 +1,4 @@
+<div class="text-5xl" *ngIf="response && response.htmlCode.length>0" [innerHTML]="response.htmlCode[0]"></div>
 <p-menubar [model]="items"></p-menubar>
 <router-outlet></router-outlet>
 <p-blockUI [blocked]="(isLoading$ | async) || false">

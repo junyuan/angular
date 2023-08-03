@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,6 +11,12 @@ import { FormlyDemoModule } from '@yuan/formly-demo';
 import { AuthModule, HttpModule, LoadingModule } from '@yuan/http';
 import { MenubarModule } from 'primeng/menubar';
 import { BlockUIModule } from 'primeng/blockui';
+import { ConfigService } from './config.service';
+import { firstValueFrom } from 'rxjs';
+
+function loadConfig(configService: ConfigService) {
+  return () => configService.loadImage();
+}
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -22,14 +28,17 @@ import { BlockUIModule } from 'primeng/blockui';
     MenubarModule,
     FormlibModule,
     FormlyDemoModule,
-    HttpModule,
+    LoadingModule.forRoot('Angular Study'),
+    // HttpModule,
     BlockUIModule,
 
     AuthModule,
-    LoadingModule,
-    
+
+
   ],
-  providers: [],
+  providers: [
+    { provide: APP_INITIALIZER, useFactory: loadConfig, deps: [ConfigService], multi: true }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

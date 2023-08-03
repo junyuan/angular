@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoadingService } from '@yuan/http';
 import { MenuItem } from 'primeng/api';
+import { ConfigService } from './config.service';
 
 @Component({
   selector: 'angular-root',
@@ -15,8 +16,9 @@ export class AppComponent {
     { label: 'Http', routerLink: '/http' },
   ];
   isLoading$ = this.loadingService.loading$;
+  response: any;
 
-  constructor(private loadingService: LoadingService) {
-
+  constructor(private loadingService: LoadingService, private configService: ConfigService) {
+    this.response = this.configService.getConfig();
   }
 }

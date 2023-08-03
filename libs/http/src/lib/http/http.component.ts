@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { LogService } from '../loading/log.service';
+import { APP_NAME } from '../loading/app.name';
 
 @Component({
   selector: 'angular-http',
@@ -9,8 +11,9 @@ import { HttpClient } from '@angular/common/http';
 export class HttpComponent {
   response: any;
 
-  constructor(private httpClient: HttpClient) {
-
+  constructor(private httpClient: HttpClient,
+    private logService: LogService) {
+    this.logService.Log('http component created');
   }
 
   requestData() {
