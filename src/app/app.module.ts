@@ -1,18 +1,17 @@
+import { HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { appRoutes } from './app.routes';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { FormlibModule } from '@yuan/formlib';
 import { FormlyDemoModule } from '@yuan/formly-demo';
-import { AuthModule, HttpModule, LoadingModule } from '@yuan/http';
-import { MenubarModule } from 'primeng/menubar';
+import { AuthModule, LoadingModule } from '@yuan/http';
 import { BlockUIModule } from 'primeng/blockui';
+import { MenubarModule } from 'primeng/menubar';
+import { AppComponent } from './app.component';
+import { appRoutes } from './app.routes';
 import { ConfigService } from './config.service';
-import { firstValueFrom } from 'rxjs';
+import { NxWelcomeComponent } from './nx-welcome.component';
 
 function loadConfig(configService: ConfigService) {
   return () => configService.loadImage();
@@ -37,7 +36,7 @@ function loadConfig(configService: ConfigService) {
 
   ],
   providers: [
-    { provide: APP_INITIALIZER, useFactory: loadConfig, deps: [ConfigService], multi: true }
+    // { provide: APP_INITIALIZER, useFactory: loadConfig, deps: [ConfigService], multi: true }
   ],
   bootstrap: [AppComponent],
 })

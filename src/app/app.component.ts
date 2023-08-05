@@ -14,6 +14,7 @@ export class AppComponent {
     { label: 'Form', routerLink: '/form' },
     { label: 'Formly', routerLink: '/formly' },
     { label: 'Http', routerLink: '/http' },
+    { label: 'Rxjs', routerLink: '/rxjs' },
   ];
   isLoading$ = this.loadingService.loading$;
   response: any;

@@ -15,9 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@yuan/http": ["libs/http/src/index.ts"],
+      "@angular/rxjs": ["libs/rxjs/src/index.ts"],
+      "@angular/rxjs/rxjs": ["libs/rxjs/rxjs/src/index.ts"],
       "@yuan/formlib": ["libs/formlib/src/index.ts"],
-      "@yuan/formly-demo": ["libs/formly-demo/src/index.ts"]
+      "@yuan/formly-demo": ["libs/formly-demo/src/index.ts"],
+      "@yuan/http": ["libs/http/src/index.ts"],
+      "@yuan/rxjs": ["libs/rxjs/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
