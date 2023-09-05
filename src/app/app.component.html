@@ -1,6 +1,9 @@
 <div class="text-5xl" *ngIf="response && response.htmlCode.length>0" [innerHTML]="response.htmlCode[0]"></div>
 <p-menubar [model]="items"></p-menubar>
-<router-outlet></router-outlet>
+<div [@routerTransition]="getRouterTransition()">
+  <router-outlet></router-outlet>
+</div>
+
 <p-blockUI [blocked]="(isLoading$ | async) || false">
   <i class="fa-3x fa-solid fa-spinner fa-spin-pulse"></i>
 </p-blockUI>
