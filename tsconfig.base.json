@@ -17,6 +17,7 @@
     "paths": {
       "@angular/rxjs": ["libs/rxjs/src/index.ts"],
       "@angular/rxjs/rxjs": ["libs/rxjs/rxjs/src/index.ts"],
+      "@angular/storybook": ["libs/storybook/src/index.ts"],
       "@yuan/anim": ["libs/anim/src/index.ts"],
       "@yuan/formlib": ["libs/formlib/src/index.ts"],
       "@yuan/formly-demo": ["libs/formly-demo/src/index.ts"],
